@@ -71,6 +71,28 @@ img{
   margin-top: 5px;
 }
 
+#socialMedia{
+  margin-top: 20px;
+}
+
+.rank{
+  border: 2px solid black;
+  display: block;
+  margin-top: 20px;
+}
+
+.rank:hover{
+  border: 2px solid cornflowerblue;
+}
+
+.mcd, .descrip, .thumb{
+  padding: 15px;
+}
+
+.descrip{
+  font-size: 20px;
+}
+
 #footer{
   text-align: center;
   background-color: cornflowerblue;
