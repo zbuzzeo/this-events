@@ -3,8 +3,56 @@
 
 /*1) to the navmenu items (Home, Location, Blog) that will show and hide the contents for that specific navmenu item.*/
 
+// i want to use the onMouseEnter and onMouseLeave events to toggle content.
 
-/*2) to each restaurant name that will show and hide (toggle) the secret menu item for that particular restaurant.*/
+var classNavi = document.getElementsByClassName('navi');
+
+for (var i = 0; i < classNavi.length; i++) {
+      console.log(classNavi[i].innerHTML);
+      classNavi[i].addEventListener('mouseenter', showContent);
+      classNavi[i].addEventListener('mouseleave', hideContent);
+
+}
+
+function showContent() {
+      // the current parent element (in this case: home, location, or blog);
+      // console.log(this.innerHTML);
+      var currentElement = this.querySelectorAll('.inner')[0];
+      // console.log(cucurrentElementrrentChild);
+      currentElement.style.color ='#dc143c';
+      currentElement.style.display = 'block';
+
+}
+
+function hideContent() {
+      var currentElement = this.querySelectorAll('.inner')[0];
+      currentElement.style.color = '#dc143c';
+      currentElement.style.display = 'none';
+
+}
+
+/*2) to each restaurant name that will show and hide (toggle) the secret menu item for that particular restaurant.*/    
+
+var classRestaurants = document.getElementsByClassName('name');
+
+for(var i = 0; i < classRestaurants.length; i++) {
+      // console.log(classRestaurants[i].innerHTML);
+      classRestaurants[i].addEventListener('click', showSecretMenu);
+
+}
+
+function showSecretMenu() {
+      var currentElement = this.querySelectorAll('.menu')[0];
+      // console.log(currentElement.innerHTML);
+      if (currentElement.style.display !== 'block') {
+            currentElement.style.display = 'block';
+            
+      } else if (currentElement.style.display === 'block') {
+            currentElement.style.display = 'none';
+
+      }
+
+}
 
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
