@@ -35,7 +35,7 @@ function hideContent() {
 
 var classRestaurants = document.getElementsByClassName('name');
 
-for(var i = 0; i < classRestaurants.length; i++) {
+for (var i = 0; i < classRestaurants.length; i++) {
       // console.log(classRestaurants[i].innerHTML);
       classRestaurants[i].addEventListener('click', showSecretMenu);
 
@@ -46,7 +46,7 @@ function showSecretMenu() {
       // console.log(currentElement.innerHTML);
       if (currentElement.style.display !== 'block') {
             currentElement.style.display = 'block';
-            
+
       } else if (currentElement.style.display === 'block') {
             currentElement.style.display = 'none';
 
@@ -57,5 +57,28 @@ function showSecretMenu() {
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
 
+var classRank = document.getElementsByClassName('rank');
+var classThumb = document.getElementsByClassName('thumb');
 
+for (var i = 0; i < classRank.length; i++) {
+      var newPElem = document.createElement('div');
+      newPElem.className = 'counter';
+      newPElem.innerHTML = 0;
+      newPElem.style.color = 'cornflowerblue';
+      newPElem.style.fontSize = '1em';
+      newPElem.style.padding = '15px 15px 0px 15px';
+      newPElem.style.marginLeft = '1em';
+      newPElem.style.marginTop = '-1.6em';
+      classThumb[i].appendChild(newPElem);
 
+      // don't need to do a second for loop because there are an equal amount of elements "rank" and elements "thumb"
+      classThumb[i].addEventListener('click', updateCount);
+
+}
+
+function updateCount() {
+      var currentCounter = this.querySelectorAll('.counter')[0];
+      console.log(this.innerHTML);
+      currentCounter.innerHTML ++;
+
+}
