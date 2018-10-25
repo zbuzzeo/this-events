@@ -57,10 +57,9 @@ function showSecretMenu() {
 
 /*3) to the thumbs down icon that will add a count (counter) for each time the icon is clicked on.*/
 
-var classRank = document.getElementsByClassName('rank');
 var classThumb = document.getElementsByClassName('thumb');
 
-for (var i = 0; i < classRank.length; i++) {
+for (var i = 0; i < classThumb.length; i++) {
       var newPElem = document.createElement('div');
       newPElem.className = 'counter';
       newPElem.innerHTML = 0;
@@ -71,7 +70,6 @@ for (var i = 0; i < classRank.length; i++) {
       newPElem.style.marginTop = '-1.6em';
       classThumb[i].appendChild(newPElem);
 
-      // don't need to do a second for loop because there are an equal amount of elements "rank" and elements "thumb"
       classThumb[i].addEventListener('click', updateCount);
 
 }
